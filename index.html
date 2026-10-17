@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A simple task tracker built with vanilla JavaScript."
+    />
+    <title>Task Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="./dist/script.js"></script>
+  </head>
+  <body>
+    <main class="app">
+      <header class="app-header">
+        <p class="eyebrow">DAY 6 PROJECT</p>
+        <h1>My Task Tracker</h1>
+        <p class="subtitle">Small steps. Real progress.</p>
+      </header>
+
+      <section class="stats" aria-label="Task statistics">
+        <article class="stat-card">
+          <span class="stat-label">Total</span>
+          <strong id="totalCount">0</strong>
+        </article>
+        <article class="stat-card">
+          <span class="stat-label">Active</span>
+          <strong id="activeCount">0</strong>
+        </article>
+        <article class="stat-card">
+          <span class="stat-label">Completed</span>
+          <strong id="completedCount">0</strong>
+        </article>
+      </section>
+
+      <section class="task-panel" aria-labelledby="formHeading">
+        <h2 id="formHeading">Add a new task</h2>
+
+        <form id="taskForm">
+          <label for="taskInput">Task description</label>
+          <div class="input-row">
+            <input
+              id="taskInput"
+              type="text"
+              placeholder="e.g. Enter your tasks"
+              maxlength="200"
+              required
+            />
+            <button class="add-button" type="submit">Add task</button>
+          </div>
+        </form>
+
+        <p id="feedback" class="feedback" role="status" aria-live="polite"></p>
+      </section>
+
+      <section class="task-panel" aria-labelledby="listHeading">
+        <div class="list-header">
+          <h2 id="listHeading">Your tasks</h2>
+
+          <label class="filter-label" for="taskFilter">
+            Show
+            <select id="taskFilter">
+              <option value="all">All tasks</option>
+              <option value="active">Active</option>
+              <option value="completed">Completed</option>
+            </select>
+          </label>
+        </div>
+
+        <ul id="taskList" class="task-list"></ul>
+
+        <p id="emptyMessage" class="empty-message">
+          No tasks yet. Add your first task above!
+        </p>
+
+        <button id="clearCompletedBtn" class="clearCompletedBtn" type="button">
+          Clear Completed
+        </button>
+      </section>
+
+      <footer class="app-footer">
+        <p>Your tasks are saved in this browser.</p>
+      </footer>
+    </main>
+  </body>
+</html>
